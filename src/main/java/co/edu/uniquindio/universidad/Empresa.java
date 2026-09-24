@@ -1,5 +1,4 @@
 package co.edu.uniquindio.universidad;
-import java.time.LocalDate;
 
 public class Empresa {
     private int MAX_CLIENTES = 50;
@@ -92,6 +91,53 @@ public class Empresa {
         return true;
     }
 
+    public Cliente buscarClientePorTelefono(String tel){
+        for (int i = 0; i < numClientes; i++){
+            if  (clientes[i] !=null && clientes[i].getTelefono().equals(tel))
+                return clientes[i];
+        }
+        return null;
+    }
+
+    public Cliente buscarClientePorDocumento(String documento){
+        for (int i = 0; i < numClientes; i++){
+            if (clientes[i] !=null && clientes[i].getDocumento().equals(documento))
+                return clientes[i];
+        }
+        return null;
+    }
+
+    public boolean actualizarCliente(String documento, Cliente nuevosDatos){
+        for (int i = 0; i < numClientes; i++){
+            if (clientes[i] !=null && clientes[i].getDocumento().equals(documento)) {
+                for (int j = 0; j < numClientes; j++) {
+                    if (j != i && clientes[j] != null && clientes[j].getTelefono().equals(nuevosDatos.getTelefono())) {
+                        return false;
+                    }
+                }
+                clientes[i] = nuevosDatos;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarCliente(String documento){
+        for (int i = 0; i < numClientes; i++){
+            if (clientes[i] !=null && clientes[i].getDocumento().equals(documento)){
+                for (int j = i; j < numClientes - 1; j++) clientes[j] = clientes[j+1];
+                clientes[numClientes - 1] = null;
+                numClientes--;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Cliente[] getClientesArray() {return clientes;}
+    public int getNumClientes(){return numClientes;}
+
+    //desarrolladores
 
 
 
