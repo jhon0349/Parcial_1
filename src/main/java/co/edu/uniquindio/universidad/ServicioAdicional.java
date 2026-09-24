@@ -7,7 +7,7 @@ public class ServicioAdicional {
     private double precio;
     private boolean disponible;
 
-    public ServicioAdicional(String codigo, String nombre, String descripcion, double precio){
+    public ServicioAdicional(String codigo, String nombre, String descripcion, double precio, boolean disponible) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
