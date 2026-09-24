@@ -17,13 +17,13 @@ public class Empresa {
     private Cliente[] clientes = new Cliente[MAX_CLIENTES];
     private int numClientes = 0;
 
-    private Desarrollador[] desarrolladores = new Desarrollador[MAX_PROYECTOS];
+    private Desarrollador[] desarrolladores = new Desarrollador[MAX_DESARROLLADORES];
     private int numDesarrolladores = 0;
 
-    private Proyecto[] proyectos = new Proyecto[MAX_SERVICIOS];
+    private Proyecto[] proyectos = new Proyecto[MAX_PROYECTOS];
     private int numProyectos = 0;
 
-    private ServicioAdicional[] servicioAdicional = new ServicioAdicional[MAX_SERVICIOS];
+    private ServicioAdicional[] servicios = new ServicioAdicional[MAX_SERVICIOS];
     private int numServicios = 0;
 
     public Empresa(String nombre, String nit, String direccion, String telefono, String paginaWeb) {
@@ -223,10 +223,10 @@ public class Empresa {
 
     public boolean actualizarServicio(String codigo, ServicioAdicional nuevosDatos){
         for (int i = 0; i < numServicios; i++){
-            if (servicios[i] != null && servicios[i].getCodigo.equals(codigo)){
+            if (servicios[i] != null && servicios[i].getCodigo().equals(codigo)){
                 if (!codigo.equals(nuevosDatos.getCodigo())) {
                     for (int j = 0; j < numServicios; j++){
-                        if (servicios[j] != null && servicios[j].getCodigo.equals(nuevosDatos.getCodigo()))
+                        if (servicios[j] != null && servicios[j].getCodigo().equals(nuevosDatos.getCodigo()))
                             return false;
                     }
                 }
