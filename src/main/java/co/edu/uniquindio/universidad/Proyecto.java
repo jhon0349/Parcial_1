@@ -109,7 +109,7 @@ public class Proyecto {
     public int getNumDesarrolladores() {
         return numDesarrolladores;
     }
-    public int getnumServicios() {
+    public int getNumServicios() {
         return numServicios;
     }
 
@@ -174,7 +174,7 @@ public class Proyecto {
         }
         double sumaServicios = 0.0;
         for (int i = 0; i < numServicios; i++) {
-            sumaServicios += servicios[i].getPrecio;
+            sumaServicios += servicios[i].getPrecio();
         }
         double subtotal = sumaTarifas - sumaServicios;
         double total = subtotal * (1 - descuento / 100.0);
