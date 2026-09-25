@@ -56,7 +56,7 @@ public class Main {
                     break;
 
                 case 3:
-                    String f = JOptionPane.showInputDialog("Fecha (YYYY-MM-DD):");
+                    String f = JOptionPane.showInputDialog("Fecha (Año-Mes-Dia):");
                     try {
                         LocalDate fecha = LocalDate.parse(f);
                         double ingresos = empresa.ingresosPorFecha(fecha);
@@ -144,9 +144,9 @@ public class Main {
                         JOptionPane.showMessageDialog(null, "Cliente no encontrado.");
                         break;
                     }
-                    LocalDate fs = LocalDate.parse(JOptionPane.showInputDialog("Fecha solicitud (YYYY-MM-DD):"));
-                    LocalDate fi = LocalDate.parse(JOptionPane.showInputDialog("Fecha inicio (YYYY-MM-DD):"));
-                    LocalDate fe = LocalDate.parse(JOptionPane.showInputDialog("Fecha entrega (YYYY-MM-DD):"));
+                    LocalDate fs = LocalDate.parse(JOptionPane.showInputDialog("Fecha solicitud (Año-Mes-Dia):"));
+                    LocalDate fi = LocalDate.parse(JOptionPane.showInputDialog("Fecha inicio (Año-Mes-Dia):"));
+                    LocalDate fe = LocalDate.parse(JOptionPane.showInputDialog("Fecha entrega (Año-Mes-Dia):"));
                     String est = JOptionPane.showInputDialog("Estado:");
                     String mp = JOptionPane.showInputDialog("Método pago:");
                     double desc = Double.parseDouble(JOptionPane.showInputDialog("Descuento (%):"));
